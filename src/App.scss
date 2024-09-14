@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+
+}
+
+body {
+    height: 100%;
+    width: 100%;
+
+}
+
+.menu {
+    position: absolute;
+    z-index: 500;
+    transition: .5s all;
+    width: 0px;
+    right: 0px;
+    height: 100%;
+    top: 0px;
+    display: block;
+    background: #dddddd;
+
+
+    a {
+        margin: 20px;
+        display: none;
+    }
+
+    &#active {
+        display: block;
+        width: 150px;
+
+        a {
+            display: block;
+
+        }
+    }
+}
+
+.topComponent {
+    display: flex;
+    padding: 20px 44px;
+    align-items: center;
+    position: relative;
+    margin-bottom: 12px;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #e2e5e8;
+        position: absolute;
+        bottom: 00px;
+        left: 0px;
+    }
+
+    .userPanel {
+        position: absolute;
+        width: 86px;
+        height: 44px;
+        display: flex;
+        cursor: pointer;
+        border-radius: 100px;
+        z-index: 600;
+        border: 1px solid #DDDDDD;
+        align-items: center;
+        justify-content: center;
+
+
+        .menuButton {
+            margin-right: 14px;
+        }
+
+        right: 44px;
+    }
+
+    .search {
+        position: absolute;
+        left: calc(50% - 298px/2);
+        border: 1px solid #E5E7EB;
+        display: flex;
+        padding-left: 24px;
+
+
+
+        &::before {
+            top: 12px;
+            left: 123px;
+            content: '';
+            position: absolute;
+            background: #E5E7EB;
+            height: 24px;
+            width: 1px;
+        }
+
+        border-radius: 100px;
+
+
+        select {
+            width: 89px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-top: 14px;
+            margin-bottom: 14px;
+
+            &.city {
+                margin-right: 32px;
+            }
+
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -o-appearance: none;
+            appearance: none;
+            outline: NONE;
+            background: transparent;
+            border: 0PX;
+
+            &#il {
+                margin-right: 20px;
+            }
+        }
+
+        .searchIcon {
+            stroke: white;
+            height: 32px;
+            width: 32px;
+            margin-right: 6px;
+            background: #0A0D14;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 16px;
+        }
+
+        align-items: center;
+    }
+}
+
+.top-banner {
+    width: 100%;
+    height: 54px;
+    color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    display: flex;
+
+    background: #0A0D14;
+
+    span.firstText {
+        background: linear-gradient(89.73deg, #FFFFFF 0%, #D7DBFF 1.33%, #EDFFAC 76.53%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    span.secondText {
+        margin-right: 12px;
+        background: linear-gradient(89.56deg, #D0FC59 0%, #F5FEE0 50.91%, #FAEDFE 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .callMeButton {
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 100px;
+        border: 1px solid #fff;
+        justify-content: center;
+
+        svg {
+            margin-right: 10px;
+        }
+    }
+
+
+    span.dot {
+        margin-left: 12px;
+        margin-right: 12px;
+        background: #fff;
+        display: block;
+        height: 3px;
+        border-radius: 2px;
+        width: 3px;
+    }
+}
+
+
+
+
+
+
+.map {
+    min-height: 900px;
+    max-height: 1000px;
+
+    min-width: calc(50%);
+    background: #000;
+}
+
+.main-page {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 80px;
+    margin-right: 80px;
+
+    .cafes {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+
+        .cafe {
+            margin-right: 23px;
+            margin-bottom: 40px;
+            max-width: 270px;
+            position: relative;
+
+
+
+            .rates {
+                position: absolute;
+                right: 0px;
+                font-size: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    margin-right: 3px;
+                    font-size: 12px;
+                }
+
+                color: #000;
+            }
+
+            .heart {
+                height: 18px;
+                width: 18px;
+                font-size: 23px;
+                position: absolute;
+                fill-opacity: 0.5;
+                right: 16px;
+                background: transparent;
+                top: 16px;
+                cursor: pointer;
+
+                &#active {
+                    svg {
+                        fill-opacity: 1;
+                    }
+                }
+            }
+
+            font: {
+                size: 15px;
+            }
+
+            color: #717171;
+
+            img {
+
+                border-radius: 12px;
+                margin-bottom: 12px;
+            }
+
+            .Title {
+
+                font-weight: 500;
+                color: #222222;
+                margin-bottom: 5px;
+            }
+
+            span.fav {
+                position: absolute;
+                background: #fff;
+                color: #000;
+                font-weight: 500;
+                width: 126px;
+                height: 28px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 40px;
+                top: 12px;
+                left: 12px;
+                border: 1px solid #fff;
+                background: linear-gradient(45deg, #F1F1F1 0%, #FFFFFF 11%, #FFFFFF 70%, #EFEFEF 94%);
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+
+            }
+
+            .price {
+                color: #222222;
+                font-weight: 500;
+                margin-top: 13px;
+
+                span {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    .cards {
+        width: 100%;
+
+        .tabs {
+            display: flex;
+            top: 16px;
+            width: 96%;
+            border-radius: 100px;
+            background: #F6F8FA;
+            padding: 4px;
+            margin-bottom: 56px;
+
+            .type {
+                padding: 12px;
+                width: 25%;
+                display: flex;
+                font-size: 14px;
+                align-items: center;
+                justify-content: center;
+                color: #868C98;
+                border-radius: 100px;
+                text-decoration: none;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                }
+
+                svg {
+                    padding-right: 8px;
+                    max-height: 20px;
+                    max-width: 20px;
+
+                    &.fillsvg {
+                        fill: #868C98;
+                    }
+
+                }
+
+                stroke: #868C98;
+
+
+
+                &#active {
+                    color: #0A0D14;
+                    padding: 12px 16px;
+                    background: #fff;
+                    box-shadow: 0px 6px 10px rgba(27, 28, 29, 0.06), 0px 2px 4px rgba(27, 28, 29, 0.02);
+
+                    svg {
+                        stroke: #0A0D14;
+
+                        &.fillsvg {
+                            fill: #0A0D14;
+
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:720px) {
+
+    .designs {
+        display: none;
+    }
+
+    .main-page {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 0px;
+        margin-right: 0px;
+
+        .map {
+            min-height: 400px;
+            width: 300px;
+            width: 400px;
+            min-width: 300px;
+
+        }
+
+        .cards {
+            display: block;
+        }
+    }
+
+    .tabs {
+        .type {
+            span {
+                font-size: 10px;
+            }
+        }
+
+        left: 0px;
+        margin: 0px;
+    }
+
+    .menu {
+        #active {
+            width: 100%;
+        }
+    }
+
+    .cafes {
+        justify-content: center;
+        margin: 0px;
+        max-width: 100px;
+        min-width: 20px;
+        margin-bottom: 24px;
+
+
+        .cafe {
+            margin: 0px;
+        }
+    }
+
+
+
+    .topComponent {
+        padding-left: 22px;
+
+
+
+        .userPanel {
+            right: 22px;
+        }
+
+        .search {
+            width: 93%;
+            left: 0px;
+            z-index: 999;
+            transition: .5 all;
+            background: #0A0D14;
+
+            select {
+                color: #fff;
+
+                option {
+                    color: #fff;
+                }
+
+
+
+            }
+
+            .searchIcon {
+                background: #fff;
+                margin: 0px;
+                stroke: #0A0D14;
+            }
+
+            #ilce {
+                margin-right: 100px;
+            }
+
+            &#mobile {
+                left: calc(50% - 42px/2);
+                height: 40px;
+
+                width: 40px;
+                right: 0px;
+                padding: 0px;
+
+
+                &::before {
+                    visibility: hidden;
+                }
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .searchIcon {
+                    margin: 0px;
+                    background: #0A0D14;
+                    stroke: #fff;
+                }
+
+                select {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .top-banner {
+        font-size: 9px;
+
+
+        span.dot {
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+
+        .callMeButton {
+            padding: 4px 6px;
+
+            svg {
+                margin-right: 4px;
+            }
+        }
+    }
+}
